@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เลองเล่นดูนะบี๋</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="jigsaw-page">
+    <div class="container gallery-container">
+        <h2>เกมต่อจิ๊กซอว์เล่นขำๆ 🧩</h2>
+        
+        <p>ลองเลือกรูปภาพดูอยากเล่นอันไหน:</p>
+
+        <div class="jigsaw-header">
+            <button id="prevImage" disabled>&#9664; ก่อนหน้า</button>
+            <div id="imageSelector">
+                </div>
+            <button id="nextImage">ถัดไป &#9654;</button>
+        </div>
+
+        <p>ต่อให้ถูกเด้อออ!</p>
+        
+        <div id="jigsawContainer">
+            </div>
+
+        <p id="jigsawMessage">คลิกมันจะสลับ!</p>
+        
+        <button class="logout-button" onclick="window.location.href='main_menu.html'">
+            <i class="fas fa-home"></i> มีอันอื่นอีกนะ
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

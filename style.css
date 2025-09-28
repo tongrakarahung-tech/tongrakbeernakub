@@ -1,0 +1,447 @@
+/* ====================================
+   สไตล์พื้นฐาน (Body & Container)
+   ==================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; /* สีพื้นหลังอ่อนๆ */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h2 {
+    color: #ff69b4; /* สีชมพูหัวใจ */
+    margin-bottom: 25px;
+}
+
+/* ====================================
+   1. สไตล์หน้า Login (Numpad)
+   ==================================== */
+
+.login-container {
+    max-width: 400px;
+}
+
+#loginImage {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-fade {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+#passwordDisplay {
+    font-size: 2em;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    height: 1.5em; 
+    display: block; 
+    color: #555;
+}
+
+.numpad-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.numpad-key {
+    background-color: #ffe4f0; /* ชมพูอ่อน */
+    color: #ff69b4;
+    border: none;
+    padding: 20px 0;
+    font-size: 1.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px #ffb3d9; /* เงาด้านล่าง */
+}
+
+.numpad-key:active {
+    background-color: #ffb3d9;
+    transform: translateY(2px);
+    box-shadow: 0 2px #ffb3d9;
+}
+
+.numpad-key[data-key="L"] {
+    background-color: #4CAF50; /* เขียว */
+    color: white;
+    box-shadow: 0 4px #388E3C;
+}
+
+.numpad-key[data-key="L"]:active {
+    background-color: #388E3C;
+    box-shadow: 0 2px #388E3C;
+}
+
+.numpad-key[data-key="C"] {
+    background-color: #f44336; /* แดง */
+    color: white;
+    box-shadow: 0 4px #D32F2F;
+}
+
+.numpad-key[data-key="C"]:active {
+    background-color: #D32F2F;
+    box-shadow: 0 2px #D32F2F;
+}
+
+#message {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #f44336;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ====================================
+   2. สไตล์หน้า Main Menu
+   ==================================== */
+.main-menu-page .container {
+    max-width: 600px;
+    padding: 40px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #ffe4f0;
+    padding: 25px;
+    border-radius: 15px;
+    color: #ff69b4;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    min-height: 120px;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    background-color: #ffccd6;
+}
+
+.menu-item .icon {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.logout-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+    background-color: #D32F2F;
+}
+
+/* ====================================
+   3. สไตล์หน้า Gallery
+   ==================================== */
+.gallery-container {
+    max-width: 1000px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Lightbox Style */
+#myLightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#lightboxImage {
+    display: block;
+    width: auto;
+    max-height: 90vh;
+    border-radius: 15px;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #ff69b4;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ====================================
+   4. สไตล์หน้า Jigsaw Puzzle
+   ==================================== */
+.jigsaw-page .container {
+    max-width: 700px;
+}
+
+.jigsaw-header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jigsaw-header button {
+    background-color: #ffb3d9;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.jigsaw-header button:hover:not(:disabled) {
+    background-color: #ff69b4;
+}
+
+.jigsaw-header button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#imageSelector img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #ff69b4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#jigsawContainer {
+    /* ขนาดคอนเทนเนอร์ต้องชัดเจนและเป็น 450px เพื่อให้สอดคล้องกับ JS */
+    width: 450px; 
+    height: 450px; 
+    margin: 20px auto;
+    display: grid;
+    /* grid-template-columns ถูกตั้งค่าเป็น 3 คอลัมน์ด้วย JS */
+    border: 5px solid #ff69b4;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.puzzle-piece {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    /* สำคัญ: เพื่อให้เส้นขอบรวมอยู่ในขนาดชิ้นส่วน ทำให้ชิ้นส่วนไม่ล้น */
+    border: 1px solid #ffffff; 
+    box-sizing: border-box; 
+    transition: transform 0.1s, box-shadow 0.1s;
+    background-repeat: no-repeat;
+}
+
+.puzzle-piece.selected {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 10px #ff69b4;
+    border: 3px solid #ff69b4;
+    z-index: 10;
+}
+
+#jigsawMessage {
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #555;
+    min-height: 20px;
+}
+
+/* ====================================
+   5. สไตล์หน้า Valentine (พร้อม Fade Animation)
+   ==================================== */
+.valentine-container {
+    max-width: 600px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+    text-align: center;
+}
+
+.valentine-container h1 {
+    color: #ff69b4;
+    font-size: 2.5em;
+}
+
+/* Valentine Image Cycle Style */
+.valentine-container .cat-image {
+    width: 300px; 
+    height: 300px; 
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    
+    opacity: 1; 
+    transition: opacity 0.5s ease-in-out; 
+}
+
+.valentine-container .cat-image.image-fade-out {
+    opacity: 0; 
+}
+
+.buttons {
+    margin-top: 30px;
+    min-height: 200px; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#yesBtn {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 5px #e65a9a;
+}
+
+#yesBtn:hover {
+    background-color: #e65a9a;
+}
+
+#noBtn {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ccc;
+    color: #666;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: default;
+    transition: all 0.5s ease-out; 
+    pointer-events: all; 
+}
+
+/* ปุ่มกลับเมนูหลัก */
+.back-to-quiz-button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.back-to-quiz-button:hover {
+    background-color: #333;
+}
+
+/* Animation สำหรับเมื่อกด Yes */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.05); }
+    60% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
